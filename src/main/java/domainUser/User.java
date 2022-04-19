@@ -2,8 +2,9 @@ package domainUser;
 
 public class User {
 
-     String username;
+    public String username;
     public String password;
+
 
     public User(String username, String password){
 
@@ -33,5 +34,6 @@ public class User {
 
         this.password = password;
     }
+
 
 }

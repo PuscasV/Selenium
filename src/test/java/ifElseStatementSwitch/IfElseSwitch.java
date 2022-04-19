@@ -2,6 +2,8 @@ package ifElseStatementSwitch;
 
 import org.junit.jupiter.api.*;
 
+import java.util.Locale;
+
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -39,6 +41,42 @@ public class IfElseSwitch {
             out.println("variable is false");
         }
 
+    }
+
+    @Test
+    public void switchExample(){
+        assertEquals("M", likelyGenderIs("sir"));
+        assertEquals("M", likelyGenderIs("mr"));
+        assertEquals("M", likelyGenderIs("master"));
+        assertEquals("F", likelyGenderIs("miss"));
+        assertEquals("F", likelyGenderIs("mrs"));
+        assertEquals("F", likelyGenderIs("ms"));
+        assertEquals("F", likelyGenderIs("lady"));
+        assertEquals("F", likelyGenderIs("madam"));
+    }
+
+    private String likelyGenderIs(String title) {
+
+        String  likelyGender;
+
+        switch (title.toLowerCase()){
+
+            case "sir":
+                likelyGender = "M";
+                break;
+            case "mr":
+                likelyGender = "M";
+                break;
+            case "master":
+                likelyGender = "M";
+                break;
+            default:
+                likelyGender = "F";
+                break;
+        }
+        return likelyGender;
+        }
+
 
     }
-}
+
