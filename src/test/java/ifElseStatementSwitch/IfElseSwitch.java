@@ -10,7 +10,7 @@ public class IfElseSwitch {
 
     @Test
     public void ifAddHttp(){
-        String url = "www.seleniumsimplified.com";
+        String url = "www.selenium-simplified.com";
         if(!url.startsWith("http")){
             url = addHttp(url);
         }
