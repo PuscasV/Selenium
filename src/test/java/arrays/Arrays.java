@@ -54,4 +54,51 @@ public class Arrays {
 
     }
 
+    @Test
+    public void forLoop(){
+
+        String[] workdays = {"Monday", "Tuesday", "Wednesday",
+                "Thursday", "Friday"};
+        String days="";
+        for(int i=0; i<=4; i++){
+            days = days + "|" + workdays[i];
+        }
+        assertEquals("|Monday|Tuesday|Wednesday|Thursday|Friday",days);
+
+    }
+
+    @Test
+    public void forLoop2(){
+
+        User vlad = new User("Vlad", "1234");
+        User andrei = new User("Andrei","123");
+        User calin = new User("Calin", "1");
+
+        User [] numeparole = {vlad, andrei, calin};
+
+
+        for(int i=0; i<3; i++){
+
+            out.println(numeparole[i].username);
+
+        }
+    }
+
+    @Test
+    public void array100Users(){
+
+        User[] numeparole = new User[100];
+
+        for (int i=1; i<=99; i++){
+
+            numeparole[i] = new User("username" + i, "password" + i);
+//            out.println(numeparole[i].username + " " + numeparole[i].password);
+
+
+        }
+        assertEquals("username78", numeparole[78].username);
+        assertEquals(100, numeparole.length);
+    }
+
+
 }
