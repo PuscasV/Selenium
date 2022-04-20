@@ -2,10 +2,13 @@ package arrays;
 import org.junit.jupiter.api.Test;
 import domainUser.*;
 
+import java.util.Arrays;
+
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class Arrays {
+
+public class Arrays123 {
 
     @Test
     public void simpleArrayExample(){
@@ -87,18 +90,21 @@ public class Arrays {
     @Test
     public void array100Users(){
 
+        User vlad = new User("Vlad", "1234");
         User[] numeparole = new User[100];
+        Arrays.fill(numeparole, 0, 1, vlad);
+        out.println(numeparole[0].username);
 
-        for (int i=1; i<=99; i++){
-
-            numeparole[i] = new User("username" + i, "password" + i);
+//        for (int i=1; i<=99; i++){
+//
+//            numeparole[i] = new User("username" + i, "password" + i);
 //            out.println(numeparole[i].username + " " + numeparole[i].password);
 
 
         }
-        assertEquals("username78", numeparole[78].username);
-        assertEquals(100, numeparole.length);
+//        assertEquals("username78", numeparole[78].username);
+//        assertEquals(100, numeparole.length);
     }
 
 
-}
+
