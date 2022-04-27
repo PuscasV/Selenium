@@ -10,6 +10,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Interfate {
 
+
+    //COLLECTION
+
     @Test
     public void collections(){
 
@@ -51,4 +54,73 @@ public class Interfate {
 
     }
 
+    // LIST
+
+    @Test
+    public void lista(){
+
+
+        List<String> zile = new ArrayList <String>();
+        zile.add("Luni");
+        zile.add("Marti");
+        zile.add(1,"Miercuri");
+        out.println(zile.size());
+        out.println(zile.indexOf("Miercuri"));
+//        assertEquals(3, zile.indexOf("Thursday"));
+
+    }
+
+    @Test
+    public void exercitiuLista(){
+
+        List<User> useri = new ArrayList <User>();
+        User vlad = new User("vlad", "1234");
+        User andrei = new User("andrei", "123456");
+        User calin = new User("calin", "0000");
+
+        useri.add(vlad);
+        useri.add(0, andrei);
+
+        assertEquals(0, useri.indexOf(andrei));
+        assertEquals(1, useri.indexOf(vlad));
+
+    }
+
+
+    /// SET
+
+    @Test
+    public void set(){
+
+        Set workdays = new HashSet();
+        workdays.add("Monday");
+        workdays.add("Monday");
+        workdays.add("Monday");
+        workdays.add("Monday");
+        workdays.add("Monday");
+        assertEquals(1, workdays.size());
+        // can only have 1 element as Monday
+
+    }
+
+    /// MAP
+
+    @Test
+    public void map(){
+
+        Map<String,String> map = new HashMap<>();
+        map.put("key1", "value1");
+        map.put("key2", "value2");
+        map.put("key3", "value3");
+        assertEquals(3, map.size());
+        assertEquals("value1", map.get("key1"));
+        assertTrue(map.containsKey("key2"));
+
+        Collection<String> valori = map.values();
+        String[] sir = new String[3];
+        valori.toArray(sir);
+        out.println(sir[1]);
+
+
+    }
 }
